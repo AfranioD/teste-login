@@ -1,0 +1,30 @@
+package gamemania;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TesteLoginGameMania {
+	private WebDriver driver;
+	
+	@Before
+	public void abrirNavegador() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\chromedriver\\chromedriver_win32\\chromedriver.exe");
+		driver = new ChromeDriver();
+	}
+	
+	@Test
+	public void testeNavegador() {
+		driver.get("http://localhost:4200/login");
+		
+		WebDriver inputEmail = driver.findElement(By.id("email"));
+		WebDriver inputSenha = driver.findElement(By.id("senha"));
+		WebDriver botaoLogin = driver.findElement(By.id("login-site"));
+		
+		InpuEmail.sendKeys("afraniodimasdasilva@gmail.com");
+		inputSenha.sendKeys("Johnny");
+		botaoLogin.click();
+	}
+}
